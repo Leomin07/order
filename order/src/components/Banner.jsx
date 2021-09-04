@@ -7,6 +7,7 @@ const Banner = () => {
         src={require('../assets/banner.jpg').default}
         alt="banner"
         className="img-fluid"
+        width="100%"
       />
     </div>
   );

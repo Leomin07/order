@@ -1,10 +1,9 @@
 import React from 'react';
-import './styles.css';
-import { Link } from 'react-router-dom';
-import { BsSearch } from 'react-icons/bs';
+import { GrMenu } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
-import { GrMenu } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
+import './styles.css';
 
 const Header = () => {
   return (
@@ -50,11 +49,6 @@ const Header = () => {
           </ul>
         </div>
         <div className="header-icons">
-          <div className="icon-search">
-            <Link to="/" className="icon-link">
-              <BsSearch size="2rem" />
-            </Link>
-          </div>
           <div className="icon-cart">
             <Link to="/cart" className="icon-link">
               <HiOutlineShoppingCart size="2rem" />
