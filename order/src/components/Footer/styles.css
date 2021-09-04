@@ -7,4 +7,9 @@ footer {
 .footer-customer,
 .footer-store {
   flex: 33%;
+  line-height: 30px;
+}
+.footer-title {
+  margin-bottom: 20px;
+  text-transform: capitalize;
 }

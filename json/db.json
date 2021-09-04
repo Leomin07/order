@@ -3,10 +3,193 @@
   "category": [
     {
       "id": 1,
-      "title": "minh"
+      "name": "ao-phong"
+    },
+    {
+      "id": 2,
+      "name": "ao-somi"
+    },
+    {
+      "id": 3,
+      "name": "quan-jean"
+    },
+    {
+      "id": 4,
+      "name": "quan-au"
     }
   ],
-  "product": [],
+  "product": [
+    {
+      "id": 1,
+      "name": "ÁO PHÔNG OVERSIZED BOOLAAB",
+      "image": "https://cdn.boo.vn/products/4595/ao-phong-oversized-boolaab-4cwcd-2.jpg",
+      "price": 499000,
+      "size": "S",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
+      "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
+      "price": 599000,
+      "size": "S",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR NON NERD",
+      "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
+      "price": 345000,
+      "size": "XL",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "name": "ÁO PHÔNG Y2K TEE L PLAYLIST",
+      "image": "https://cdn.boo.vn/products/4527/ao-phong-y2k-tee-l-playlist-3gvpv-1.jpg",
+      "price": 499000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "ÁO PHÔNG NAM BOOSTICKERS OVERSIZED SỪNG SẦU",
+      "image": "https://cdn.boo.vn/products/4531/ao-phong-nam-boostickers-oversized-sung-sau-solidden-blackden-2.jpg",
+      "price": 445000,
+      "size": "M",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "ÁO PHÔNG NAM LOOSE TIEDYE IN HÌNH",
+      "image": "https://cdn.boo.vn/products/4563/ao-phong-nam-loose-tiedye-in-hinh-patten-hoa-tietcam-orangecam-1.jpg",
+      "price": 499000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 7,
+      "name": "ÁO PHÔNG NAM LOOSE STONEWASH",
+      "image": "https://cdn.boo.vn/products/4561/ao-phong-nam-loose-stonewash-solidxanh-la-cay-greenxanh-reu-1.jpg",
+      "price": 345000,
+      "size": "S",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 8,
+      "name": "ÁO PHÔNG TIE DYED BOOLAAB 2",
+      "image": "https://cdn.boo.vn/products/4617/ao-phong-tie-dyed-boolaab-2-extod-1.jpg",
+      "price": 599000,
+      "size": "M",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 1
+    },
+    {
+      "id": 9,
+      "name": "ÁO SƠ MI NAM DENIM NGẮN TAY",
+      "image": "https://cdn.boo.vn/products/4465/ao-so-mi-nam-denim-ngan-tay-danih-2.jpg",
+      "price": 599000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 10,
+      "name": "ÁO SƠ MI NAM LOOSE CỔ SCUBA NT",
+      "image": "https://cdn.boo.vn/products/4446/ao-so-mi-nam-loose-co-scuba-nt-n65qb-2.jpg",
+      "price": 395000,
+      "size": "XL",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 11,
+      "name": "ÁO SƠ MI LOOSE BOO LAAB 2 MÀU",
+      "image": "https://cdn.boo.vn/products/477/ao-so-mi-loose-boo-laab-2-mau-ke-caroden-blackdentrang-1.jpg",
+      "price": 999000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 12,
+      "name": "ÁO SƠ MI LOOSE BOO LAAB 3 MÀU",
+      "image": "https://cdn.boo.vn/products/532/ao-so-mi-loose-boo-laab-3-mau-tlyeg-0.jpg",
+      "price": 999000,
+      "size": "M",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 13,
+      "name": "ÁO SƠ MI NAM LOOSE DT 2 TÚI",
+      "image": "https://cdn.boo.vn/products/176/ao-so-mi-nam-loose-dt-2-tui-j2r1i-0.jpg",
+      "price": 999000,
+      "size": "M",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 14,
+      "name": "ÁO SƠ MI NAM REGULAR CỔ TÀU",
+      "image": "https://cdn.boo.vn/products/42/ao-so-mi-nam-regular-co-tau-solidxanh-tim-thannavytim-than-1.jpg",
+      "price": 399000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 15,
+      "name": "ÁO SƠ MI NAM REGULAR DT NHUNG",
+      "image": "https://cdn.boo.vn/products/36/ao-so-mi-nam-regular-dt-nhung-solidbe-beigebe-1.jpg",
+      "price": 499000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 16,
+      "name": "ÁO SƠ MI NAM REGULAR CỔ TÀU",
+      "image": "https://cdn.boo.vn/products/295/ao-so-mi-nam-regular-co-tau-solidbe-beigebe-1.jpg",
+      "price": 449000,
+      "size": "XL",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 2
+    },
+    {
+      "id": 11,
+      "name": "ÁO SƠ MI LOOSE BOO LAAB 2 MÀU",
+      "image": "https://cdn.boo.vn/products/477/ao-so-mi-loose-boo-laab-2-mau-ke-caroden-blackdentrang-1.jpg",
+      "price": 999000,
+      "size": "L",
+      "color": "#FFB5C5",
+      "description": "Áo phông BOOLAAB phối gió vai lưng \n- Áo phông BOOLAAB dáng oversize là một trong những item đang được yêu thích nhất trong giới trẻ hiện nay. Áo được thiết kế kiểu dáng rộng rãi, thích hợp cho cả nam và nữ.\n- Áo thun unisex form rộng có thể phối nhiều item khác nhau (demim, flannel, short, jogger.....) mang tới phong cách năng động, cá tính cho người mặc.\n- Sản phẩm 100% cotton, đường may tinh tế chắc chắn với bề mặt vải mềm mại, thấm hút mồ hôi tốt tạo cảm giác thoáng mát cho người mặc.\n- Không ra màu, không bai, không xù, không bám dính",
+      "categoryId": 3
+    }
+  ],
   "cart": [],
   "order": []
 }

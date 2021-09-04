@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "json-server": "^0.16.3",
     "json-server-auth": "^2.1.0"
+  },
+  "scripts": {
+    "start": "json-server-auth -w -p 9000 db.json"
   }
 }
