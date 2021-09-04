@@ -70,15 +70,6 @@ const Header = () => {
       <div className="header-mobile">
         <GrMenu size="2rem" />
       </div>
-      <div className="header-bottom">
-        <div className="banner">
-          <img
-            src={require('../../assets/banner.jpg').default}
-            alt="banner"
-            className="img-fluid"
-          />
-        </div>
-      </div>
     </header>
   );
 };
