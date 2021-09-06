@@ -1,0 +1,15 @@
+.home {
+  display: flex;
+  flex-wrap: wrap;
+}
+aside {
+  flex: 30%;
+}
+
+main {
+  flex: 70%;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
