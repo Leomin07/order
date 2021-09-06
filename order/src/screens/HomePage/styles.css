@@ -3,13 +3,14 @@
   flex-wrap: wrap;
 }
 aside {
-  flex: 30%;
+  flex: 25%;
 }
 
 main {
-  flex: 70%;
+  flex: 75%;
 }
 .products {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
 }

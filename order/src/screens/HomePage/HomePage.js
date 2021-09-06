@@ -19,15 +19,15 @@ const HomePage = () => {
         <Filter />
       </aside>
       <main>
-        {loading ? (
-          <span>Loading</span>
-        ) : (
-          products.map((value, index) => (
-            <div className="products">
+        <div className="products">
+          {loading ? (
+            <span>Loading</span>
+          ) : (
+            products.map((value, index) => (
               <Products key={index} product={value} />
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </main>
     </div>
   );
