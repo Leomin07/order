@@ -1,19 +1,25 @@
 header {
   background-color: #fff;
-  position: fixed;
-  width: 100%;
 }
-.text-center {
-  text-align: center;
-  align-items: center;
+.header-top {
+  background: #f3f3f3;
+  padding: 5px;
 }
 .header-main {
+  background: #fff;
+  overflow: hidden;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 10px 0;
 }
 .header-logo {
   padding: 0 30px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .nav {
   display: flex;

@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GrMenu } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+// import Banner from '../Banner.jsx';
 import './styles.css';
 
 const Header = () => {
+  const [scrolling, setScrolling] = useState(false);
+
+  const handleScroll = () => {
+    if (window.pageYOffset >= 120) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.addEventListener('scroll', handleScroll);
+  });
   return (
     <header>
       <div className="header-top container">
@@ -13,7 +27,7 @@ const Header = () => {
           Hotline Mua hàng: 0968.959.050 | Hotline CSKH: 0868.303.399
         </p>
       </div>
-      <div className="header-main">
+      <div className={scrolling ? 'header-main sticky' : 'header-main'}>
         <div className="header-logo">
           <Link to="/">
             <img
@@ -64,6 +78,7 @@ const Header = () => {
       <div className="header-mobile">
         <GrMenu size="2rem" />
       </div>
+      {/* <Banner /> */}
     </header>
   );
 };

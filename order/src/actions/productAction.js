@@ -32,7 +32,7 @@ export const productLists = name => async dispatch => {
     });
   }
 };
-export const fetchProductDetail = id => async dispatch => {
+export const productDetail = id => async dispatch => {
   dispatch({
     type: FETCH_PRODUCT_DETAIL_REQUEST,
   });
