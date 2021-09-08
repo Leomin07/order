@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { productLists } from '../actions/productAction.js';
+import { productLists, paginationProduct } from '../actions/productAction.js';
 import Filter from '../components/Filter.js';
 import Products from '../components/Products/ProductList.jsx';
 import Loading from '../components/Loading.js';
@@ -12,13 +12,18 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const { products, loading, error } = state;
   useEffect(() => {
-    dispatch(productLists(page));
+    dispatch(productLists());
     // setTimeout(() => {
     // }, 1000);
-  }, [dispatch, page]);
+  }, [dispatch]);
+  console.log(products);
+  const pagination = () => {
+    dispatch(paginationProduct(page));
+  };
+
   return (
     <div className="home container">
-      <aside>{loading ? '' : error ? '' : <Filter />}</aside>
+      {/* <aside>{loading ? '' : error ? '' : <Filter />}</aside>
       <main>
         <div className="products">
           {loading ? (
@@ -32,7 +37,7 @@ const HomePage = () => {
           )}
           <button onClick={() => setPage(page + 1)}>Load more</button>
         </div>
-      </main>
+      </main> */}
     </div>
   );
 };

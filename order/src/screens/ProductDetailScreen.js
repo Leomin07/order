@@ -12,6 +12,8 @@ const ProductDetailScreen = ({ match }) => {
   const { product, loading, error } = detail;
   useEffect(() => {
     dispatch(productDetail(id));
+    // setTimeout(() => {
+    // }, 1000);
   }, [dispatch, id]);
   return (
     <div className="container">

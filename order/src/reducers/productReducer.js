@@ -2,6 +2,7 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_FAILED,
+  FETCH_NEW_PRODUCTS_SUCCESS,
   FETCH_PRODUCT_DETAIL_REQUEST,
   FETCH_PRODUCT_DETAIL_SUCCESS,
   FETCH_PRODUCT_DETAIL_FAILED,
@@ -28,6 +29,11 @@ export const productListReducer = (
       };
     case FETCH_PRODUCTS_FAILED:
       return { loading: false, FAILED: action.payload };
+    case FETCH_NEW_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+      };
     case FILTER_PRODUCT_BY_SIZE:
       return {
         ...state,
