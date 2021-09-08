@@ -13,13 +13,14 @@ import {
 } from '../types/productType.js';
 import axios from 'axios';
 
-export const productLists = name => async dispatch => {
+export const productLists = page => async dispatch => {
   dispatch({
     type: FETCH_PRODUCTS_REQUEST,
   });
   try {
     const { data } = await axios.get(
-      `http://localhost:9000/products?q=${name}`
+      `http://localhost:9000/products?_page=${page}&_limit=8`
+      // `http://localhost:9000/products?q=${name}`
     );
     dispatch({
       type: FETCH_PRODUCTS_SUCCESS,

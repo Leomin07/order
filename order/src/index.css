@@ -32,7 +32,7 @@ a {
   text-decoration: none;
 }
 button {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Quicksand;
   font-weight: 900;
 }
@@ -40,6 +40,8 @@ button {
 .home {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 aside {
   flex: 25%;
@@ -58,7 +60,7 @@ main {
 /* cart */
 table {
   background: #fff;
-  padding: 10px 0;
+  padding: 10px 30px;
   width: 100%;
   text-align: center;
   align-items: center;
@@ -90,7 +92,6 @@ table {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  /* position: absolute; */
 }
 .btn-decrease {
   width: 30px;
@@ -103,5 +104,33 @@ table {
 .cart-remove {
   color: red;
   cursor: pointer;
+}
+.cart-total-price {
+  text-align: right;
+  margin-right: 17%;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cart-control {
+  text-align: right;
+  margin-right: 15%;
+}
+.cart-control-home,
+.cart-control-order {
+  padding: 10px 20px;
+  margin: 0 20px;
+  outline: none;
+  border-radius: 20px;
+  background: #69b5c4;
+  border: none;
+  transition: 1.2s;
+  margin-bottom: 20px;
+}
+.cart-control-home:hover,
+.cart-control-order:hover {
+  background: #fff;
+  border: 1px solid #69b5c4;
+  color: #69b5c4;
 }
 /* end-cart */

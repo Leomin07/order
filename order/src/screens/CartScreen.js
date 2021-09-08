@@ -9,13 +9,16 @@ import {
   increaseQty,
   removeFromCart,
 } from '../actions/cartAction.js';
+import { useHistory } from 'react-router-dom';
 
 const CartScreen = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const carts = useSelector(state => state.cart.cartItems);
   useEffect(() => {
     dispatch(cartList());
   }, [dispatch]);
+
   const removeFromCartHandler = id => {
     dispatch(removeFromCart(id));
   };
@@ -28,7 +31,7 @@ const CartScreen = () => {
     dispatch(decreaseQty(key));
   };
   return (
-    <div className="cart container">
+    <div className="cart">
       {carts.length < 1 ? (
         <h3 className="cart-null text-center">
           Không có sản phẩm nào trong giỏ hàng của bạn
@@ -51,7 +54,6 @@ const CartScreen = () => {
           <tbody>
             {carts.map((value, key) => (
               <tr key={value.id}>
-                <td>{key} </td>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -84,11 +86,17 @@ const CartScreen = () => {
                     />
                   </div>
                 </td>
-                <td className="cart-total">money</td>
+                <td>
+                  <NumberFormat
+                    value={value.qty * value.price}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix={'₫'}
+                  />
+                </td>
                 <td className="cart-remove">
                   <AiOutlineDelete
                     size="2rem"
-                    // onClick={() => console.log(true)}
                     onClick={() => removeFromCartHandler(value.id)}
                   />
                 </td>
@@ -97,6 +105,32 @@ const CartScreen = () => {
           </tbody>
         </table>
       )}
+      {carts.length < 1 ? (
+        ''
+      ) : (
+        <div className="cart-total-price">
+          <span>
+            Tổng tiền: {''}
+            <NumberFormat
+              value={carts.reduce((a, c) => a + c.qty * c.price, 0)}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'₫'}
+            />
+          </span>
+        </div>
+      )}
+      <div className="cart-control">
+        <button className="cart-control-home" onClick={() => history.push('/')}>
+          TIẾP TỤC MUA HÀNG
+        </button>
+        <button
+          className="cart-control-order"
+          onClick={() => history.push('/checkout')}
+        >
+          THANH TOÁN
+        </button>
+      </div>
     </div>
   );
 };

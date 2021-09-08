@@ -14,7 +14,7 @@ const HomePage = () => {
     dispatch(productLists(''));
   }, [dispatch]);
   return (
-    <div className="container home">
+    <div className="home container">
       <aside>
         <Filter />
       </aside>

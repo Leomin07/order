@@ -63,12 +63,16 @@ const ProductDetail = ({ product }) => {
           <p>{product.description}</p>
         </div>
         <div className="product-detail-action">
-          <button
-            className="add-to-cart"
-            onClick={() => addToCartHandler(product)}
-          >
-            ADD TO CART
-          </button>
+          {product.qty < 1 ? (
+            ''
+          ) : (
+            <button
+              className="add-to-cart"
+              onClick={() => addToCartHandler(product)}
+            >
+              ADD TO CART
+            </button>
+          )}
         </div>
       </div>
     </div>

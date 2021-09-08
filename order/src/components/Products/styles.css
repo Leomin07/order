@@ -4,6 +4,7 @@
   padding: 0 15px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .card-img {
   overflow: hidden;

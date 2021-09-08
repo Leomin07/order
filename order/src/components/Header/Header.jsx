@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { GrMenu } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
 // import Banner from '../Banner.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { cartList } from '../../actions/cartAction.js';
 import './styles.css';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const carts = useSelector(state => state.cart.cartItems);
+  useEffect(() => {
+    dispatch(cartList());
+  }, [dispatch]);
   const [scrolling, setScrolling] = useState(false);
-
   const handleScroll = () => {
     if (window.pageYOffset >= 120) {
       setScrolling(true);
@@ -63,12 +69,17 @@ const Header = () => {
           </ul>
         </div>
         <div className="header-icons">
-          <div className="icon-cart">
+          <div className="cart-icon">
+            {carts.length < 1 ? (
+              ''
+            ) : (
+              <div className="cart-count">{carts.length}</div>
+            )}
             <Link to="/cart" className="icon-link">
               <HiOutlineShoppingCart size="2rem" />
             </Link>
           </div>
-          <div className="icon-account">
+          <div className="account-icon">
             <Link to="/login" className="icon-link">
               <RiAccountPinCircleFill size="2rem" />
             </Link>
