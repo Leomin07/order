@@ -58,6 +58,9 @@ main {
 /* end-homePage */
 
 /* cart */
+.cart {
+  margin: 20px 0;
+}
 table {
   background: #fff;
   padding: 10px 30px;

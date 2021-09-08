@@ -120,17 +120,24 @@ const CartScreen = () => {
           </span>
         </div>
       )}
-      <div className="cart-control">
-        <button className="cart-control-home" onClick={() => history.push('/')}>
-          TIẾP TỤC MUA HÀNG
-        </button>
-        <button
-          className="cart-control-order"
-          onClick={() => history.push('/checkout')}
-        >
-          THANH TOÁN
-        </button>
-      </div>
+      {carts.length < 1 ? (
+        ''
+      ) : (
+        <div className="cart-control">
+          <button
+            className="cart-control-home"
+            onClick={() => history.push('/')}
+          >
+            TIẾP TỤC MUA HÀNG
+          </button>
+          <button
+            className="cart-control-order"
+            onClick={() => history.push('/checkout')}
+          >
+            THANH TOÁN
+          </button>
+        </div>
+      )}
     </div>
   );
 };
