@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Filter from '../../components/Filter.js';
-import { productLists } from '../../actions/productAction.js';
-import Products from '../../components/Products/ProductList.jsx';
-import './styles.css';
+import { productLists } from '../actions/productAction.js';
+import Filter from '../components/Filter.js';
+import Products from '../components/Products/ProductList.jsx';
+import Loading from '../components/Loading.js';
+import MessageBox from '../components/MessageBox.js';
 
 const HomePage = () => {
   const state = useSelector(state => state.productList);
@@ -12,16 +13,17 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(productLists(''));
   }, [dispatch]);
-  console.log(products);
   return (
-    <div className="container home">
+    <div className="home container">
       <aside>
         <Filter />
       </aside>
       <main>
         <div className="products">
           {loading ? (
-            <span>Loading</span>
+            <Loading />
+          ) : error ? (
+            <MessageBox />
           ) : (
             products.map((value, index) => (
               <Products key={index} product={value} />
