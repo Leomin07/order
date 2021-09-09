@@ -3,19 +3,19 @@
     "category": [
         {
             "id": 1,
-            "name": "ao-phong"
+            "name": "ÁO PHÔNG"
         },
         {
             "id": 2,
-            "name": "ao-somi"
+            "name": "ÁO SƠ MI"
         },
         {
             "id": 3,
-            "name": "quan-jean"
+            "name": "QUẦN JEAN"
         },
         {
             "id": 4,
-            "name": "quan-jogger"
+            "name": "QUẦN JOGGER"
         }
     ],
     "products": [
@@ -182,7 +182,7 @@
         {
             "id": 17,
             "name": "QUẦN JEANS NAM BOOZilla Star Wars",
-            "image": "https://cdn.boo.vn/products/477/ao-so-mi-loose-boo-laab-2-mau-ke-caroden-blackdentrang-1.jpg",
+            "image": "https://cdn.boo.vn/products/4555/quan-jeans-nam-boozilla-star-wars-denim-jeansxanh-da-troi-bluedenim-dam-b8nj046-1.jpg",
             "price": 899000,
             "size": "30",
             "qty": 10,

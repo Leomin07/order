@@ -18,7 +18,7 @@ const CartScreen = () => {
   useEffect(() => {
     dispatch(cartList());
   }, [dispatch]);
-
+  console.log(carts);
   const removeFromCartHandler = id => {
     dispatch(removeFromCart(id));
   };

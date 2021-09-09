@@ -1,10 +1,11 @@
 .card {
-  flex: 25%;
+  flex-basis: 25%;
   margin: 10px 0;
   padding: 0 15px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 25%;
+  align-items: center;
 }
 .card-img {
   overflow: hidden;
@@ -24,3 +25,16 @@
   margin-top: auto;
   color: red;
 }
+.card-actions {
+  margin-top: 10px;
+  background: none;
+}
+.hidden button {
+  background: none;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: none;
+  border: none;
+  color: #c0c0c0;
+}
+/* .disable{} */
