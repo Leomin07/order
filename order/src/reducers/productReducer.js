@@ -8,12 +8,22 @@ import {
   ADD_PRODUCT,
   UPDATE_PRODUCT,
   DELETE_PRODUCT,
-  FILTER_PRODUCT_BY_SIZE,
-  FILTER_PRODUCT_BY_CATEGORY,
+  SEARCH_PRODUCT_REQUEST,
+  SEARCH_PRODUCT_SUCCESS,
+  SEARCH_PRODUCT_FAILED,
+  PRODUCT_BY_CATEGORY_ID_REQUEST,
+  PRODUCT_BY_CATEGORY_ID_SUCCESS,
+  PRODUCT_BY_CATEGORY_ID_FAILED,
+  PRODUCT_BY_SIZE_REQUEST,
+  PRODUCT_BY_SIZE_SUCCESS,
+  PRODUCT_BY_SIZE_FAILED,
+  PRODUCT_ACTIVE_REQUEST,
+  PRODUCT_ACTIVE_SUCCESS,
+  PRODUCT_ACTIVE_FAILED,
 } from '../types/productType.js';
 
 export const productListReducer = (
-  state = { products: [], loading: true, filterItems: [] },
+  state = { products: [], loading: true },
   action
 ) => {
   switch (action.type) {
@@ -24,20 +34,66 @@ export const productListReducer = (
         ...state,
         loading: false,
         products: action.payload,
-        filterItems: action.payload,
       };
     case FETCH_PRODUCTS_FAILED:
-      return { loading: false, FAILED: action.payload };
-    case FILTER_PRODUCT_BY_SIZE:
+      return { loading: false, error: action.payload };
+
+    case SEARCH_PRODUCT_REQUEST:
       return {
         ...state,
-        products: action.payload.items,
+        loading: true,
       };
-    case FILTER_PRODUCT_BY_CATEGORY:
+    case SEARCH_PRODUCT_SUCCESS:
       return {
         ...state,
-        products: action.payload.items,
+        products: action.payload,
+        loading: false,
       };
+    case SEARCH_PRODUCT_FAILED:
+      return { loading: false, error: action.payload };
+
+    case PRODUCT_BY_CATEGORY_ID_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case PRODUCT_BY_CATEGORY_ID_SUCCESS:
+      return {
+        ...state,
+        products: action.payload,
+        loading: false,
+      };
+    case PRODUCT_BY_CATEGORY_ID_FAILED:
+      return { loading: false, error: action.payload };
+
+    case PRODUCT_BY_SIZE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case PRODUCT_BY_SIZE_SUCCESS:
+      return {
+        ...state,
+        products: action.payload,
+        loading: false,
+      };
+    case PRODUCT_BY_SIZE_FAILED:
+      return { loading: false, error: action.payload };
+
+    case PRODUCT_ACTIVE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case PRODUCT_ACTIVE_SUCCESS:
+      return {
+        ...state,
+        products: action.payload,
+        loading: false,
+      };
+    case PRODUCT_ACTIVE_FAILED:
+      return { loading: false, error: action.payload };
+
     case ADD_PRODUCT:
       return {
         ...state,
@@ -60,7 +116,7 @@ export const productListReducer = (
 };
 
 export const productDetailReducer = (
-  state = { product: [], loading: true },
+  state = { product: [], loading: true, error: null },
   action
 ) => {
   switch (action.type) {
@@ -77,7 +133,7 @@ export const productDetailReducer = (
     case FETCH_PRODUCT_DETAIL_FAILED:
       return {
         loading: false,
-        FAILED: action.payload,
+        error: action.payload,
       };
     default:
       return state;

@@ -1,24 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { categoryList } from '../actions/categoryAction.js';
 import { productLists } from '../actions/productAction.js';
-import Filter from '../components/Filter.js';
-import Products from '../components/Products/ProductList.jsx';
+import Filter from '../components/Filter/Filter.js';
 import Loading from '../components/Loading.js';
 import MessageBox from '../components/MessageBox.js';
+import Products from '../components/Products/ProductList.jsx';
 
 const HomePage = () => {
-  const [page, setPage] = useState(1);
   const state = useSelector(state => state.productList);
+  const category = useSelector(state => state.categories);
   const dispatch = useDispatch();
   const { products, loading, error } = state;
   useEffect(() => {
-    dispatch(productLists(page));
-    // setTimeout(() => {
-    // }, 1000);
-  }, [dispatch, page]);
+    dispatch(productLists());
+    dispatch(categoryList());
+  }, [dispatch]);
   return (
     <div className="home container">
-      <aside>{loading ? '' : error ? '' : <Filter />}</aside>
+      <aside>
+        {category.loading ? (
+          ''
+        ) : category.error ? (
+          ''
+        ) : (
+          <Filter
+            categories={category.categories}
+            productLists={productLists}
+          />
+        )}
+      </aside>
       <main>
         <div className="products">
           {loading ? (
@@ -30,7 +41,6 @@ const HomePage = () => {
               <Products key={index} product={value} />
             ))
           )}
-          <button onClick={() => setPage(page + 1)}>Load more</button>
         </div>
       </main>
     </div>

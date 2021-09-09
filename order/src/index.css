@@ -38,7 +38,6 @@ button {
 }
 /* loading */
 .loading {
-  /* display: none; */
   position: fixed;
   left: 0;
   top: 0;
@@ -64,11 +63,11 @@ button {
   margin-bottom: 20px;
 }
 aside {
-  flex: 25%;
+  flex: 20%;
 }
 
 main {
-  flex: 75%;
+  flex: 80%;
 }
 .products {
   display: flex;
