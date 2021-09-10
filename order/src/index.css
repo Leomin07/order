@@ -14,6 +14,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+div#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 .container {
   width: 100%;
   padding: 0 30px;
@@ -32,9 +37,21 @@ a {
   text-decoration: none;
 }
 button {
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: rgb(0, 0, 0);
+  transition: 1.2s;
+  background: linear-gradient(to right, #bfc7c7 50%, lightblue 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
   font-size: 18px;
   font-family: Quicksand;
   font-weight: 900;
+}
+button:hover {
+  background-position: left bottom;
+  color: #fff;
 }
 /* loading */
 .loading {
@@ -140,19 +157,48 @@ table {
 }
 .cart-control-home,
 .cart-control-order {
-  padding: 10px 20px;
   margin: 0 20px;
-  outline: none;
-  border-radius: 20px;
-  background: #69b5c4;
-  border: none;
-  transition: 1.2s;
-  margin-bottom: 20px;
 }
-.cart-control-home:hover,
-.cart-control-order:hover {
-  background: #fff;
-  border: 1px solid #69b5c4;
-  color: #69b5c4;
-}
+
 /* end-cart */
+
+/* login and register */
+.login {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.login-title {
+  flex-basis: 50%;
+  font-size: 4rem;
+}
+.login-form {
+  flex-basis: 50%;
+  align-items: center;
+  padding: 40px 100px;
+  border-left: 1px solid;
+}
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: Quicksand;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-style: solid;
+  color: #495057;
+  font-size: 16px;
+  line-height: 21px;
+}
+.login-form-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+/* end-login-and-register */

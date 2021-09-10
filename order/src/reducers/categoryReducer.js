@@ -11,7 +11,7 @@ import {
 } from '../types/categoryType.js';
 
 export const categoryListReducer = (
-  state = { categories: [], loading: false, error: null },
+  state = { categories: [], loading: false },
   action
 ) => {
   switch (action.type) {

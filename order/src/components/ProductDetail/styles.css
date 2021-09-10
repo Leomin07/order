@@ -61,21 +61,6 @@
 .product-detail-action {
   margin-top: 10px;
 }
-.add-to-cart {
-  padding: 5px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #ffd500;
-  color: black;
-  transition: 1.2s;
-  outline: none;
-}
-.add-to-cart:hover {
-  border: 1px solid #ffd500;
-  background: #fff;
-  color: #dbb700;
-  cursor: pointer;
-}
 .disable {
   display: none;
 }

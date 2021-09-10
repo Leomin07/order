@@ -28,10 +28,7 @@ export const productLists = title => async dispatch => {
     type: FETCH_PRODUCTS_REQUEST,
   });
   try {
-    const { data } = await axios.get(
-      // `http://localhost:9000/products?_page=${page}&_limit=8`
-      `http://localhost:9000/products`
-    );
+    const { data } = await axios.get(`http://localhost:9000/products`);
     dispatch({
       type: FETCH_PRODUCTS_SUCCESS,
       payload: data,

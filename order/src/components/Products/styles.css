@@ -17,6 +17,7 @@
 }
 .card-name span {
   color: black;
+  padding: 0 8px;
 }
 .card-name span:hover {
   color: #007ff5;
@@ -29,12 +30,7 @@
   margin-top: 10px;
   background: none;
 }
+
 .hidden button {
-  background: none;
-  cursor: not-allowed;
-  pointer-events: none;
-  color: none;
-  border: none;
-  color: #c0c0c0;
+  visibility: hidden;
 }
-/* .disable{} */

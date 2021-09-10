@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import {
-  productByCategoryId,
-  searchProduct,
-  productBySize,
   productActive,
+  productByCategoryId,
+  productBySize,
+  searchProduct,
 } from '../../actions/productAction.js';
 import './styles.css';
 
