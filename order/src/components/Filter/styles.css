@@ -52,6 +52,7 @@
 
 /* status */
 .status-list input {
+  margin: 10px 0;
   margin-right: 10px;
 }
 /* end-status */

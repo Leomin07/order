@@ -6,6 +6,8 @@ import NoMatch from './components/NoMatch.js';
 import HomeScreen from './screens/HomeScreen.js';
 import CartScreen from './screens/CartScreen.js';
 import ProductDetailScreen from './screens/ProductDetailScreen.js';
+import LoginScreen from './screens/LoginScreen.js';
+import RegisterScreen from './screens/RegisterScreen.js';
 
 const App = () => {
   return (
@@ -15,6 +17,9 @@ const App = () => {
         <Route path="/" component={HomeScreen} exact />
         <Route path="/product/:id" component={ProductDetailScreen} exact />
         <Route path="/cart" component={CartScreen} />
+        <Route path="/login" component={LoginScreen} exact />
+        <Route path="/register" component={RegisterScreen} exact />
+        {/* <PrivateRoute path="/" /> */}
         <Route path="*">
           <NoMatch />
         </Route>
