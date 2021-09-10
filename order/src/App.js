@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
@@ -8,8 +8,16 @@ import CartScreen from './screens/CartScreen.js';
 import ProductDetailScreen from './screens/ProductDetailScreen.js';
 import LoginScreen from './screens/LoginScreen.js';
 import RegisterScreen from './screens/RegisterScreen.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadUserAction } from './actions/authAction.js';
 
 const App = () => {
+  const auth = useSelector(state => state.auth.token);
+  console.log('log 🚀 ~ file: App.js ~ line 16 ~ App ~ auth', auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadUserAction());
+  }, [dispatch]);
   return (
     <Router>
       <Header />

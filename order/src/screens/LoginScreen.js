@@ -11,7 +11,7 @@ const LoginScreen = () => {
     e.preventDefault();
     dispatch(loginAction(email, password));
   };
-
+  console.log();
   return (
     <div className="login container">
       <div className="login-title text-center">ĐĂNG NHẬP</div>

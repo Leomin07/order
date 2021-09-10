@@ -6,6 +6,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAILED,
   LOGOUT,
+  LOAD_USER,
 } from '../types/authType.js';
 import axios from 'axios';
 
@@ -67,4 +68,12 @@ export const logoutAction = () => dispatch => {
   dispatch({
     type: LOGOUT,
   });
+};
+export const loadUserAction = () => (dispatch, getState) => {
+  const token = getState().auth.token;
+  if (token) {
+    dispatch({
+      type: LOAD_USER,
+    });
+  } else return null;
 };

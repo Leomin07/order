@@ -7,7 +7,7 @@ import {
 } from '../types/cartType.js';
 
 export const cartList = () => (dispatch, getState) => {
-  const cartItems = getState().cart.cartItems.slice();
+  const cartItems = getState().cart.cartItems;
   dispatch({
     type: CART_LIST,
     payload: { cartItems },
