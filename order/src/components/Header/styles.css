@@ -12,6 +12,7 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
+  z-index: 9999;
 }
 .header-logo {
   padding: 0 30px;
@@ -39,9 +40,6 @@ header {
 .header-icons {
   display: flex;
 }
-.header-mobile {
-  display: none;
-}
 .icon-link {
   text-decoration: none;
   color: #000;
@@ -49,6 +47,7 @@ header {
 }
 .cart-icon {
   position: relative;
+  margin-right: 10px;
 }
 .cart-count {
   position: absolute;
@@ -61,7 +60,41 @@ header {
   border-radius: 50%;
   text-align: center;
 }
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.user-info:hover .user-actions {
+  display: block;
+  z-index: 1;
+}
+.user-actions {
+  display: none;
+  position: absolute;
+  background: #fff;
+  top: 90px;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.user-action_logout,
+.user-action_order {
+  color: #000;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 10px;
+  transition: all ease 0.5s;
+  z-index: 999;
+}
 
+.user-action_logout:hover a,
+.user-action_order:hover a {
+  color: #007ff5;
+}
+
+.header-mobile {
+  display: none;
+}
 @media only screen and (max-width: 640px) {
   .header-mobile {
     display: block;

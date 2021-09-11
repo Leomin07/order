@@ -1,10 +1,8 @@
 .card {
   flex-basis: 25%;
   margin: 10px 0;
-  padding: 0 15px;
   display: flex;
   flex-direction: column;
-  width: 25%;
   align-items: center;
 }
 .card-img {
@@ -30,7 +28,6 @@
   margin-top: 10px;
   background: none;
 }
-
-.hidden button {
+.hidden {
   visibility: hidden;
 }

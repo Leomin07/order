@@ -11,18 +11,7 @@
   border: 1px solid #ccc;
   font-size: 18px;
 }
-.btn-submit {
-  position: absolute;
-  top: 7px;
-  right: 5px;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-.btn-submit svg {
-  background: none;
-}
+
 /* end-search */
 
 /* category */

@@ -1,6 +1,7 @@
 .product-detail {
   display: flex;
   font-size: 20px;
+  margin: 20px;
 }
 .product-detail-img img {
   width: 100%;
@@ -24,6 +25,7 @@
   margin-top: 10px;
   padding: 10px 20px;
   background: #fff;
+  cursor: default;
 }
 .tick-size {
   background: red;
@@ -46,8 +48,9 @@
   background: rgb(221, 36, 36);
   padding: 15px;
   border: 1px solid rgb(221, 36, 36);
-  transition: 1.2s;
+  transition: all 0.8s ease;
   border-radius: 10px;
+  cursor: default;
 }
 .product-detail-qty button:hover {
   color: rgb(221, 36, 36);
@@ -60,7 +63,4 @@
 }
 .product-detail-action {
   margin-top: 10px;
-}
-.disable {
-  display: none;
 }

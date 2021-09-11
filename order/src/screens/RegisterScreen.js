@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerAction } from '../actions/authAction.js';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const RegisterScreen = () => {
+  const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [name, setName] = useState();
@@ -13,6 +15,7 @@ const RegisterScreen = () => {
   const loginHandler = e => {
     e.preventDefault();
     dispatch(registerAction(email, password, name, phone, address, false));
+    history.push('/');
   };
 
   return (
@@ -20,24 +23,6 @@ const RegisterScreen = () => {
       <div className="login-title text-center">ĐĂNG KÝ</div>
       <div className="login-form ">
         <form onSubmit={e => loginHandler(e)}>
-          <div className="form-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              className="form-control"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
           <div className="form-group">
             <input
               className="form-control"
@@ -50,10 +35,28 @@ const RegisterScreen = () => {
           <div className="form-group">
             <input
               className="form-control"
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
               type="number"
               placeholder="Số Điện Thoại"
               value={phone}
               onChange={e => setPhone(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -67,10 +70,13 @@ const RegisterScreen = () => {
             ></textarea>
           </div>
           <div className="login-form-control">
-            <button className="btn-login">ĐĂNG KÝ</button>
+            <button className="btn-register">ĐĂNG KÝ</button>
             <div className="login-form-control_right">
               <span>
-                Bạn chưa đã có tài khoản? <Link to="/login">ĐĂNG NHẬP</Link>
+                Bạn chưa đã có tài khoản?{' '}
+                <Link to="/login" className="link">
+                  ĐĂNG NHẬP
+                </Link>
               </span>
             </div>
           </div>

@@ -10,7 +10,7 @@ import {
 
 export const loginReducer = (
   state = {
-    users: [],
+    user: [],
     token: localStorage.getItem('token'),
     loading: false,
   },
@@ -27,7 +27,7 @@ export const loginReducer = (
     case REGISTER_SUCCESS:
       return {
         ...state,
-        users: action.payload.user,
+        user: action.payload.user,
         token: action.payload.accessToken,
         loading: false,
       };

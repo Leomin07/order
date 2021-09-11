@@ -22,7 +22,7 @@ const ProductDetail = ({ product }) => {
     history.push('/cart');
   };
   return (
-    <div className="product-detail container">
+    <div className="product-detail">
       <div className="product-detail-img">
         <img
           src={`${product.image}`}
@@ -67,10 +67,10 @@ const ProductDetail = ({ product }) => {
             ''
           ) : (
             <button
-              className="add-to-cart"
+              className="btn-add-to-cart"
               onClick={() => addToCartHandler(product)}
             >
-              ADD TO CART
+              ĐẶT HÀNG
             </button>
           )}
         </div>

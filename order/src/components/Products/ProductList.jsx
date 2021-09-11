@@ -44,10 +44,10 @@ const ProductList = ({ product }) => {
       </div>
       <div className={product.qty < 1 ? 'card-actions hidden' : 'card-actions'}>
         <button
-          className="add-to-cart"
+          className="btn-add-to-cart"
           onClick={() => addToCartHandler(product)}
         >
-          ADD TO CART
+          ĐẶT HÀNG
         </button>
       </div>
     </div>
