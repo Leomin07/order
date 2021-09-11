@@ -4,15 +4,20 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
 // import Banner from '../Banner.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { logoutAction } from '../../actions/authAction.js';
 import { cartList } from '../../actions/cartAction.js';
 import './styles.css';
 
-const Header = () => {
+const Header = ({ auth }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const carts = useSelector(state => state.cart.cartItems);
+  const user = useSelector(state => state.auth.user);
   useEffect(() => {
     dispatch(cartList());
+    window.addEventListener('scroll', handleScroll);
+    return () => window.addEventListener('scroll', handleScroll);
   }, [dispatch]);
   const [scrolling, setScrolling] = useState(false);
   const handleScroll = () => {
@@ -22,10 +27,10 @@ const Header = () => {
       setScrolling(false);
     }
   };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.addEventListener('scroll', handleScroll);
-  });
+  const logoutHandler = () => {
+    dispatch(logoutAction());
+  };
+
   return (
     <header>
       <div className="header-top container">
@@ -79,11 +84,28 @@ const Header = () => {
               <HiOutlineShoppingCart size="2rem" />
             </Link>
           </div>
-          <div className="account-icon">
-            <Link to="/login" className="icon-link">
-              <RiAccountPinCircleFill size="2rem" />
-            </Link>
-          </div>
+          {auth && (
+            <div className="user-info">
+              <div className="user-name">{user.fullName} </div>
+              <div className="user-actions">
+                <div className="user-action_logout">
+                  <Link to="/login" onClick={() => logoutHandler()}>
+                    Logout
+                  </Link>
+                </div>
+                <div className="user-action_order">
+                  <Link to="/order">Lịch sử đặt hàng</Link>
+                </div>
+              </div>
+            </div>
+          )}
+          {!auth && (
+            <div className="account-icon">
+              <Link to="/login" className="icon-link">
+                <RiAccountPinCircleFill size="2rem" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div className="header-mobile">

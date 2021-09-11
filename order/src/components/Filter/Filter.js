@@ -80,9 +80,6 @@ const Filter = ({ productLists, categories }) => {
           onSubmit={e => searchProductHandler(e)}
         >
           <input type="text" onChange={e => setKeyword(e.target.value)} />
-          <button className="btn-submit">
-            <AiOutlineSearch size="2rem" />
-          </button>
         </form>
       </div>
       <div className="category">
