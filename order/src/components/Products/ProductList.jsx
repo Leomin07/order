@@ -16,6 +16,7 @@ const ProductList = ({ product }) => {
       image: product.image,
       qty: 1,
       size: product.size,
+      complete: false,
     };
     dispatch(addToCart(newProduct));
     history.push('/cart');
