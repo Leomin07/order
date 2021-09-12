@@ -37,7 +37,7 @@ const Cart = ({ carts, cartComplete }) => {
 
   return (
     <div>
-      <table>
+      <table className="text-center px-10 py-5">
         <thead>
           <tr>
             <th>
@@ -69,9 +69,7 @@ const Cart = ({ carts, cartComplete }) => {
                 <img
                   src={cart.image}
                   alt={cart.name}
-                  className="cart-img img-fluid"
-                  with="200px"
-                  height="120px"
+                  className="max-w-full h-48 m-auto"
                 />
               </td>
               <td className="cart-name">{cart.name}</td>

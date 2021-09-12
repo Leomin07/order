@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 * {
   padding: 0;
@@ -115,8 +118,6 @@ td {
   padding: 10px 0;
 }
 .cart-img {
-  /* width: 200px;
-  height: 120px; */
   object-fit: contain;
 }
 .cart-qty {

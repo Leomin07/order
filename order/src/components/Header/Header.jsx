@@ -73,12 +73,14 @@ const Header = ({ auth }) => {
             </li>
           </ul>
         </div>
-        <div className="header-icons">
+        <div className="header-icons relative">
           <div className="cart-icon">
             {carts.length < 1 ? (
               ''
             ) : (
-              <div className="cart-count">{carts.length}</div>
+              <div className="w-6 h-6 bg-red text-white text-center rounded-full absolute -right-2 top-3">
+                {carts.length}
+              </div>
             )}
             <Link to="/cart" className="icon-link">
               <HiOutlineShoppingCart size="2rem" />
