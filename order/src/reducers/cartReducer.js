@@ -1,14 +1,19 @@
 import {
   ADD_TO_CART,
   CART_LIST,
-  REMOVE_FROM_CART,
-  INCREASE_QTY,
+  COMPLETE_ALL_CART,
+  COMPLETE_CART,
   DECREASE_QTY,
   EMPTY_CART,
+  INCREASE_QTY,
+  REMOVE_FROM_CART,
 } from '../types/cartType.js';
 
 export const cartReducer = (
-  state = { cartItems: JSON.parse(localStorage.getItem('cartItems') || '[]') },
+  state = {
+    cartItems: JSON.parse(localStorage.getItem('cartItems') || '[]'),
+    cartComplete: JSON.parse(localStorage.getItem('cartComplete') || '[]'),
+  },
   action
 ) => {
   switch (action.type) {
@@ -54,11 +59,33 @@ export const cartReducer = (
         ...state,
         cartItems: state.cartItems.filter(x => x.id !== action.payload),
       };
+
     case EMPTY_CART:
       return {
         ...state,
         cartItems: [],
       };
+
+    case COMPLETE_CART:
+      return {
+        ...state,
+        cartItems: state.cartItems.map(cart =>
+          cart.id === action.payload
+            ? { ...cart, complete: !cart.complete }
+            : cart
+        ),
+      };
+
+    case COMPLETE_ALL_CART:
+      const checkAll = state.cartItems.every(x => x.complete);
+      return {
+        ...state,
+        cartItems: state.cartItems.map(cart => ({
+          ...cart,
+          complete: !checkAll,
+        })),
+      };
+
     default:
       return state;
   }

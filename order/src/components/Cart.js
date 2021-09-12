@@ -1,17 +1,18 @@
 import React from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { VscAdd, VscChromeMinimize } from 'react-icons/vsc';
 import NumberFormat from 'react-number-format';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 import {
-  cartList,
+  completeAllCart,
+  completeCart,
   decreaseQty,
   increaseQty,
   removeFromCart,
 } from '../actions/cartAction.js';
-import { AiOutlineDelete } from 'react-icons/ai';
-import { VscAdd, VscChromeMinimize } from 'react-icons/vsc';
-import { useHistory } from 'react-router';
 
-const Cart = ({ carts }) => {
+const Cart = ({ carts, cartComplete }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const removeFromCartHandler = id => {
@@ -25,13 +26,26 @@ const Cart = ({ carts }) => {
   const decreaseQtyHandler = key => {
     dispatch(decreaseQty(key));
   };
+
+  const completeCartHandler = id => {
+    dispatch(completeCart(id));
+  };
+
+  const completeAllCartHandler = () => {
+    dispatch(completeAllCart());
+  };
+
   return (
     <div>
       <table>
         <thead>
           <tr>
             <th>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                checked={carts.every(cart => cart.complete)}
+                onChange={() => completeAllCartHandler()}
+              />
             </th>
             <th>Ảnh sản phẩm</th>
             <th>Tên sản phẩm</th>
@@ -45,13 +59,19 @@ const Cart = ({ carts }) => {
           {carts.map((cart, key) => (
             <tr key={cart.id}>
               <td>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  checked={cart.complete}
+                  onChange={() => completeCartHandler(cart.id)}
+                />
               </td>
               <td>
                 <img
                   src={cart.image}
                   alt={cart.name}
                   className="cart-img img-fluid"
+                  with="200px"
+                  height="120px"
                 />
               </td>
               <td className="cart-name">{cart.name}</td>
@@ -78,7 +98,7 @@ const Cart = ({ carts }) => {
               </td>
               <td>
                 <NumberFormat
-                  cart={cart.qty * cart.price}
+                  value={cart.qty * cart.price}
                   displayType={'text'}
                   thousandSeparator={true}
                   prefix={'₫'}
@@ -94,37 +114,31 @@ const Cart = ({ carts }) => {
           ))}
         </tbody>
       </table>
-      <div className="cart-control">
-        {carts.length < 1 ? (
-          ''
-        ) : (
-          <div className="cart-total-price">
-            <span>
-              Tổng tiền: {''}
-              <NumberFormat
-                value={carts.reduce((a, c) => a + c.qty * c.price, 0)}
-                displayType={'text'}
-                thousandSeparator={true}
-                prefix={'₫'}
-              />
-            </span>
-          </div>
-        )}
-        {carts.length < 1 ? (
-          ''
-        ) : (
-          <div className="cart-actions">
-            <button className="btn-home" onClick={() => history.push('/')}>
-              TIẾP TỤC MUA HÀNG
-            </button>
-            <button
-              className="btn-order"
-              onClick={() => history.push('/checkout')}
-            >
-              THANH TOÁN
-            </button>
-          </div>
-        )}
+      <div className="cart-bottom">
+        <div className="select-all-cart">
+          <input type="checkbox" />
+          <span>CHỌN TẤT CẢ ({carts.length}) </span>
+        </div>
+        <h4 className="total-price">
+          TỔNG THANH TOÁN ({cartComplete.length} SẢN PHẨM):{' '}
+          <NumberFormat
+            value={cartComplete.reduce((a, c) => a + c.qty * c.price, 0)}
+            displayType={'text'}
+            thousandSeparator={true}
+            prefix={'₫'}
+          />
+        </h4>
+        <div className="cart-actions">
+          <button className="btn-home" onClick={() => history.push('/')}>
+            TIẾP TỤC ĐẶT HÀNG
+          </button>
+          <button
+            className="btn-order"
+            onClick={() => history.push('/checkout')}
+          >
+            MUA HÀNG
+          </button>
+        </div>
       </div>
     </div>
   );

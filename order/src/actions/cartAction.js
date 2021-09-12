@@ -1,16 +1,21 @@
 import {
   ADD_TO_CART,
   CART_LIST,
-  REMOVE_FROM_CART,
-  INCREASE_QTY,
+  COMPLETE_ALL_CART,
+  COMPLETE_CART,
   DECREASE_QTY,
+  INCREASE_QTY,
+  REMOVE_FROM_CART,
 } from '../types/cartType.js';
 
 export const cartList = () => (dispatch, getState) => {
-  const cartItems = getState().cart.cartItems;
+  const cartItems = localStorage.getItem(
+    'cartItems',
+    JSON.stringify(getState().cart.cartItems)
+  );
   dispatch({
     type: CART_LIST,
-    payload: { cartItems },
+    payload: cartItems,
   });
 };
 
@@ -42,6 +47,20 @@ export const removeFromCart = id => (dispatch, getState) => {
   dispatch({
     type: REMOVE_FROM_CART,
     payload: id,
+  });
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
+
+export const completeCart = id => (dispatch, getState) => {
+  dispatch({
+    type: COMPLETE_CART,
+    payload: id,
+  });
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
+export const completeAllCart = () => (dispatch, getState) => {
+  dispatch({
+    type: COMPLETE_ALL_CART,
   });
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };
