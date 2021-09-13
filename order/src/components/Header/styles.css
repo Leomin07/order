@@ -27,7 +27,6 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  position: relative;
 }
 .nav-item {
   list-style: none;
@@ -65,7 +64,11 @@ header {
   align-items: center;
   cursor: pointer;
 }
-.user-info:hover .user-actions {
+.menu {
+  display: none;
+}
+.user-info:hover .user-actions,
+.nav-item:hover .menu {
   display: block;
   z-index: 1;
 }
@@ -73,7 +76,7 @@ header {
   display: none;
   position: absolute;
   background: #fff;
-  top: 90px;
+  top: 110px;
   width: 100%;
   z-index: 9999;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -94,22 +97,4 @@ header {
 
 .header-mobile {
   display: none;
-}
-@media only screen and (max-width: 640px) {
-  .header-mobile {
-    display: block;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-  }
-  header {
-    background: #fff;
-  }
-  .header-main,
-  .nav,
-  .header-icons {
-    display: none;
-    flex-direction: column;
-    position: relative;
-  }
 }

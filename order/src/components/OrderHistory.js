@@ -1,9 +1,9 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 
-const CartComplete = ({ cartComplete }) => {
+const OrderHistory = ({ order }) => {
   return (
-    <table className="table-auto text-center w-full mt-3 bg-white shadow rounded">
+    <table className="table-auto align-center text-center w-full mt-">
       <thead>
         <tr>
           <th>Ảnh sản phẩm</th>
@@ -14,32 +14,30 @@ const CartComplete = ({ cartComplete }) => {
         </tr>
       </thead>
       <tbody>
-        {cartComplete.map((cart, key) => (
-          <tr key={cart.id}>
+        {order.orderItems.map(item => (
+          <tr key={item.id}>
             <td>
               <img
-                src={cart.image}
-                alt={cart.name}
+                src={item.image}
+                alt={item.name}
                 className="max-w-full h-28 m-auto"
               />
             </td>
-            <td className="cart-name">{cart.name}</td>
-            <td className="cart-price">
+            <td>{item.name}</td>
+            <td>
               <NumberFormat
-                value={cart.price}
+                value={item.price}
                 displayType={'text'}
                 thousandSeparator={true}
                 prefix={'₫'}
               />
             </td>
             <td>
-              <div className="cart-qty">
-                <input type="text" min="1" value={cart.qty} />
-              </div>
+              <div className="">{item.qty}</div>
             </td>
             <td>
               <NumberFormat
-                value={cart.qty * cart.price}
+                value={item.qty * item.price}
                 displayType={'text'}
                 thousandSeparator={true}
                 prefix={'₫'}
@@ -52,4 +50,4 @@ const CartComplete = ({ cartComplete }) => {
   );
 };
 
-export default CartComplete;
+export default OrderHistory;

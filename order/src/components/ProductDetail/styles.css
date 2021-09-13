@@ -27,14 +27,6 @@
   background: #fff;
   cursor: default;
 }
-.tick-size {
-  background: red;
-  color: #fff;
-  border-radius: 2px;
-  position: absolute;
-  left: 1px;
-  top: 35px;
-}
 .product-detail-qty {
   display: none;
   padding: 10px 0;

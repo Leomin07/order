@@ -29,11 +29,14 @@ const Header = ({ auth }) => {
   };
   const logoutHandler = () => {
     dispatch(logoutAction());
+    history.push('/login');
   };
-
+  window.onbeforeunload = function () {
+    localStorage.removeItem('token');
+  };
   return (
-    <header>
-      <div className="header-top container">
+    <header className="w-full">
+      <div className="header-top">
         <p className="header-top text-center">
           Hotline Mua hàng: 0968.959.050 | Hotline CSKH: 0868.303.399
         </p>
@@ -50,30 +53,53 @@ const Header = ({ auth }) => {
           </Link>
         </div>
         <div className="header-nav">
-          <ul className="nav text-center">
+          <ul className="nav text-center ">
             <li className="nav-item">
               <Link to="/" className="nav-link">
                 Trang chủ
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Áo nam
-              </Link>
+              <div className="relative ">
+                <Link to="/" className="nav-link hover:text-blue">
+                  Áo nam
+                </Link>
+              </div>
+              <div className="absolute z-50 menu bg-white text-left shadow">
+                <div className="py-2 border-b border-gray">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Áo Sơ Mi
+                  </Link>
+                </div>
+                <div className="py-2 border-b shadow border-gray">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Áo Phông
+                  </Link>
+                </div>
+              </div>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Quần nam
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Giới thiệu
-              </Link>
+              <div className="relative ">
+                <Link to="/" className="nav-link hover:text-blue">
+                  Quần nam
+                </Link>
+              </div>
+              <div className="absolute z-50 menu bg-white text-left shadow">
+                <div className="py-2 border-b border-gray">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Quần Jean
+                  </Link>
+                </div>
+                <div className="py-2 border-b shadow border-gray">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Quần Jogger
+                  </Link>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
-        <div className="header-icons relative">
+        <div className="header-icons">
           <div className="cart-icon">
             {carts.length < 1 ? (
               ''
@@ -96,7 +122,7 @@ const Header = ({ auth }) => {
                   </Link>
                 </div>
                 <div className="user-action_order">
-                  <Link to="/order">Lịch sử đặt hàng</Link>
+                  <Link to="/order-history">Lịch sử đặt hàng</Link>
                 </div>
               </div>
             </div>

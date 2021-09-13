@@ -15,7 +15,7 @@ const LoginScreen = () => {
     history.push('/');
   };
   return (
-    <div className="login container">
+    <div className="login">
       <div className="login-title text-center">ĐĂNG NHẬP</div>
       <div className="login-form ">
         <form onSubmit={e => loginHandler(e)}>
@@ -38,7 +38,7 @@ const LoginScreen = () => {
             />
           </div>
           <div className="login-form-control">
-            <button className="btn-login">ĐĂNG NHẬP</button>
+            <button className="btn-submit">ĐĂNG NHẬP</button>
             <div className="login-form-control_right">
               <span>
                 Bạn chưa có tài khoản?{' '}

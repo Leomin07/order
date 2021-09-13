@@ -19,7 +19,7 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className="login container">
+    <div className="login">
       <div className="login-title text-center">ĐĂNG KÝ</div>
       <div className="login-form ">
         <form onSubmit={e => loginHandler(e)}>
@@ -70,7 +70,7 @@ const RegisterScreen = () => {
             ></textarea>
           </div>
           <div className="login-form-control">
-            <button className="btn-register">ĐĂNG KÝ</button>
+            <button className="btn-submit">ĐĂNG KÝ</button>
             <div className="login-form-control_right">
               <span>
                 Bạn chưa đã có tài khoản?{' '}

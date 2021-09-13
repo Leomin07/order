@@ -15,7 +15,7 @@ const ProductDetailScreen = ({ match }) => {
     dispatch(productDetail(id));
   }, [dispatch, id]);
   return (
-    <div className="container">
+    <div className="">
       <div>
         {loading ? (
           <Loading />

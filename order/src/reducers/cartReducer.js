@@ -7,12 +7,12 @@ import {
   EMPTY_CART,
   INCREASE_QTY,
   REMOVE_FROM_CART,
+  REMOVE_MULTI_ITEM,
 } from '../types/cartType.js';
 
 export const cartReducer = (
   state = {
     cartItems: JSON.parse(localStorage.getItem('cartItems') || '[]'),
-    cartComplete: JSON.parse(localStorage.getItem('cartComplete') || '[]'),
   },
   action
 ) => {
@@ -58,6 +58,12 @@ export const cartReducer = (
       return {
         ...state,
         cartItems: state.cartItems.filter(x => x.id !== action.payload),
+      };
+
+    case REMOVE_MULTI_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(x => x.complete !== true),
       };
 
     case EMPTY_CART:

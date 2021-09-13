@@ -1,14 +1,14 @@
+import axios from 'axios';
 import {
+  LOAD_USER,
+  LOGIN_FAILED,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
-  LOGIN_FAILED,
+  LOGOUT,
+  REGISTER_FAILED,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
-  REGISTER_FAILED,
-  LOGOUT,
-  LOAD_USER,
 } from '../types/authType.js';
-import axios from 'axios';
 
 export const loginAction = (email, password) => dispatch => {
   dispatch({

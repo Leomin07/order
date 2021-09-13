@@ -13,7 +13,7 @@ const CartScreen = () => {
   }, [dispatch]);
 
   return (
-    <div className="cart">
+    <div className="px-8 cart">
       {carts.length < 1 ? (
         <h3 className="cart-null text-center">
           Không có sản phẩm nào trong giỏ hàng của bạn
