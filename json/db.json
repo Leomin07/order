@@ -1,19 +1,21 @@
 {
   "users": [
     {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$IH7z9gYEODWv3Pxg.OSDn./f9hwDnFo15vGHTAutCuVuxOnYEmwiW",
-      "admin": true,
-      "fullName": "Admin",
+      "email": "minhtd@gmail.com",
+      "password": "$2a$10$a1Y4hF0g6rZsT8ObHj.ojOfgVlsZh4.qThJcAXHNhFkOKDarlc1ZC",
+      "fullName": "Trần Đại Minh",
+      "phone": "0975426401",
+      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
+      "isAdmin": false,
       "id": 1
     },
     {
-      "email": "minhtd@gmail.com",
-      "password": "$2a$10$h4.3qW.Sq4IwSaHaoUKzVOBIgtpgVVb9rtiTBzloMI2kvVFiZXXZO",
-      "fullName": "Trần Đại Minh",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$TYkEo/QIWlNsax40SuubYeZOxaz14a5dtsM7rL.COs6hMPpzA0dK.",
+      "fullName": "Admin",
       "phone": "0975426401",
-      "address": "hà nội",
-      "isAdmin": false,
+      "address": "Hà Nội",
+      "isAdmin": true,
       "id": 2
     }
   ],
@@ -317,5 +319,62 @@
       "categoryId": 4
     }
   ],
-  "order": []
+  "order": [
+    {
+      "userId": 1,
+      "fullName": "Trần Đại Minh",
+      "phone": "0975426401",
+      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
+      "createAt": "9/13/2021, 7:13:27 PM",
+      "orderItems": [
+        {
+          "id": 3,
+          "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR",
+          "price": 345000,
+          "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
+          "qty": 1,
+          "size": "XL",
+          "complete": true
+        },
+        {
+          "id": 2,
+          "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
+          "price": 599000,
+          "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
+          "qty": 1,
+          "size": "S",
+          "complete": true
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "fullName": "Trần Đại Minh",
+      "phone": "0975426401",
+      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
+      "createAt": "9/13/2021, 10:21:26 PM",
+      "orderItems": [
+        {
+          "id": 3,
+          "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR",
+          "price": 345000,
+          "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
+          "qty": 1,
+          "size": "XL",
+          "complete": true
+        },
+        {
+          "id": 2,
+          "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
+          "price": 599000,
+          "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
+          "qty": 1,
+          "size": "S",
+          "complete": true
+        }
+      ],
+      "id": 2
+    }
+  ]
 }

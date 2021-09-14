@@ -42,10 +42,12 @@ const ProductDetail = ({ product }) => {
             />
           </span>
         </div>
-        <div className="product-detail-size">
+        <div className="product-detail-size relative">
           <p>Size:</p>
-          <button>{product.size}</button>
-          <TiTick className="tick-size" />
+          <button className="bg-none outline-none border">
+            {product.size}
+          </button>
+          <TiTick className="tick-size absolute top-10 bg-red text-white" />
         </div>
         <div
           className={

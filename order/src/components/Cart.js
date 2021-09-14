@@ -37,10 +37,10 @@ const Cart = ({ carts, cartComplete }) => {
 
   return (
     <div>
-      <table>
+      <table className="table-auto text-center w-full mt-3 bg-white shadow rounded">
         <thead>
           <tr>
-            <th>
+            <th className="px-4">
               <input
                 type="checkbox"
                 checked={carts.every(cart => cart.complete)}
@@ -69,9 +69,7 @@ const Cart = ({ carts, cartComplete }) => {
                 <img
                   src={cart.image}
                   alt={cart.name}
-                  className="cart-img img-fluid"
-                  with="200px"
-                  height="120px"
+                  className="max-w-full h-48 m-auto"
                 />
               </td>
               <td className="cart-name">{cart.name}</td>
@@ -104,10 +102,11 @@ const Cart = ({ carts, cartComplete }) => {
                   prefix={'₫'}
                 />
               </td>
-              <td className="cart-remove">
+              <td className="cart-remove ">
                 <AiOutlineDelete
                   size="2rem"
                   onClick={() => removeFromCartHandler(cart.id)}
+                  className="mx-auto"
                 />
               </td>
             </tr>
@@ -115,8 +114,8 @@ const Cart = ({ carts, cartComplete }) => {
         </tbody>
       </table>
       <div className="cart-bottom">
-        <div className="select-all-cart">
-          <input type="checkbox" />
+        <div className="select-all-cart ">
+          <input type="checkbox" className="mr-3" />
           <span>CHỌN TẤT CẢ ({carts.length}) </span>
         </div>
         <h4 className="total-price">
@@ -128,12 +127,12 @@ const Cart = ({ carts, cartComplete }) => {
             prefix={'₫'}
           />
         </h4>
-        <div className="cart-actions">
-          <button className="btn-home" onClick={() => history.push('/')}>
+        <div className="cart-actions ">
+          <button className="bg-gray mx-4" onClick={() => history.push('/')}>
             TIẾP TỤC ĐẶT HÀNG
           </button>
           <button
-            className="btn-order"
+            className="btn-submit mx-4"
             onClick={() => history.push('/checkout')}
           >
             MUA HÀNG

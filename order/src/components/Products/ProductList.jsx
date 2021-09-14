@@ -43,7 +43,9 @@ const ProductList = ({ product }) => {
           />
         </span>
       </div>
-      <div className={product.qty < 1 ? 'card-actions hidden' : 'card-actions'}>
+      <div
+        className={product.qty < 1 ? 'card-actions invisible' : 'card-actions'}
+      >
         <button
           className="btn-add-to-cart"
           onClick={() => addToCartHandler(product)}

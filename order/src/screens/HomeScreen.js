@@ -17,8 +17,8 @@ const HomePage = () => {
     dispatch(categoryList());
   }, [dispatch]);
   return (
-    <div className="home container">
-      <aside>
+    <div className="home px-8 flex">
+      <aside className="w-1/4">
         {category.loading ? (
           ''
         ) : category.error ? (
@@ -30,8 +30,8 @@ const HomePage = () => {
           />
         )}
       </aside>
-      <main>
-        <div className="products">
+      <main className="w-3/4">
+        <div className="products -ml-4">
           {loading ? (
             <Loading />
           ) : error ? (
