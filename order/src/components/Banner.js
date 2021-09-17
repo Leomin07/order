@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <div className="banner z-0">
       <img
         src={require('../assets/banner.jpg').default}
         alt="banner"

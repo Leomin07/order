@@ -10,8 +10,8 @@ const OrderHistoryScreen = () => {
   const dispatch = useDispatch();
   const orderLists = useSelector(state => state.orderList.order);
   const [isShow, setIsShow] = useState(false);
-  const showOrderDetail = () => {
-    setIsShow(!isShow);
+  const showOrderDetail = id => {
+    orderLists.find(order => (order.id === id ? setIsShow(!isShow) : ''));
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const OrderHistoryScreen = () => {
               </div>
               <button
                 className="text-blue border-b ml-2 hover:text-blue-100 outline-none"
-                onClick={showOrderDetail}
+                onClick={() => showOrderDetail(order.id)}
               >
                 XEM CHI TIẾT
               </button>

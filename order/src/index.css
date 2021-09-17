@@ -17,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.container {
+.root {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -127,6 +127,9 @@ td {
 .cart-img {
   object-fit: contain;
 }
+.cart-img img {
+  margin: auto;
+}
 .cart-qty {
   display: flex;
   align-items: center;
@@ -159,6 +162,9 @@ td {
 .cart-remove {
   color: red;
   cursor: pointer;
+}
+.cart-remove svg {
+  margin: auto;
 }
 .cart-bottom {
   margin: 20px 0;

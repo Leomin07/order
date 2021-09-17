@@ -40,6 +40,7 @@ export const loginReducer = (
       };
     case LOGOUT:
       localStorage.removeItem('token');
+      localStorage.removeItem('isAdmin');
       return {
         users: [],
         token: null,

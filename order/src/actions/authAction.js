@@ -21,6 +21,7 @@ export const loginAction = (email, password) => dispatch => {
     })
     .then(resp => {
       localStorage.setItem('token', resp.data.accessToken);
+      localStorage.setItem('isAdmin', resp.data.user.isAdmin);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: resp.data,

@@ -3,7 +3,7 @@ import NumberFormat from 'react-number-format';
 
 const OrderHistory = ({ order }) => {
   return (
-    <table className="table-auto align-center text-center w-full mt-">
+    <table className="table-auto align-center text-center w-full">
       <thead>
         <tr>
           <th>Ảnh sản phẩm</th>
@@ -16,11 +16,11 @@ const OrderHistory = ({ order }) => {
       <tbody>
         {order.orderItems.map(item => (
           <tr key={item.id}>
-            <td>
+            <td className="cart-img">
               <img
                 src={item.image}
                 alt={item.name}
-                className="max-w-full h-28 m-auto"
+                className="max-w-full h-28"
               />
             </td>
             <td>{item.name}</td>

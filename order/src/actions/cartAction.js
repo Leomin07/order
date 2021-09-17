@@ -7,6 +7,7 @@ import {
   INCREASE_QTY,
   REMOVE_FROM_CART,
   REMOVE_MULTI_ITEM,
+  EMPTY_CART,
 } from '../types/cartType.js';
 
 export const cartList = () => (dispatch, getState) => {
@@ -68,6 +69,13 @@ export const completeAllCart = () => (dispatch, getState) => {
 export const removeMultiItem = () => (dispatch, getState) => {
   dispatch({
     type: REMOVE_MULTI_ITEM,
+  });
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
+
+export const emptyCartAction = () => (dispatch, getState) => {
+  dispatch({
+    type: EMPTY_CART,
   });
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };

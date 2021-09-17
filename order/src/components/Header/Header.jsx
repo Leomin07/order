@@ -4,12 +4,14 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
 // import Banner from '../Banner.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { logoutAction } from '../../actions/authAction.js';
 import { cartList } from '../../actions/cartAction.js';
+import Banner from '../Banner.js';
 import './styles.css';
 
 const Header = ({ auth }) => {
+  const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
   const carts = useSelector(state => state.cart.cartItems);
@@ -30,9 +32,6 @@ const Header = ({ auth }) => {
   const logoutHandler = () => {
     dispatch(logoutAction());
     history.push('/login');
-  };
-  window.onbeforeunload = function () {
-    localStorage.removeItem('token');
   };
   return (
     <header className="w-full">
@@ -67,13 +66,13 @@ const Header = ({ auth }) => {
               </div>
               <div className="absolute z-50 menu bg-white text-left shadow">
                 <div className="py-2 border-b border-gray">
-                  <Link to="/" className="nav-link hover:text-blue">
-                    Áo Sơ Mi
+                  <Link to="/category=1" className="nav-link hover:text-blue">
+                    Áo Phông
                   </Link>
                 </div>
                 <div className="py-2 border-b shadow border-gray">
-                  <Link to="/" className="nav-link hover:text-blue">
-                    Áo Phông
+                  <Link to="/category=2" className="nav-link hover:text-blue">
+                    Áo Sơ Mi
                   </Link>
                 </div>
               </div>
@@ -86,12 +85,12 @@ const Header = ({ auth }) => {
               </div>
               <div className="absolute z-50 menu bg-white text-left shadow">
                 <div className="py-2 border-b border-gray">
-                  <Link to="/" className="nav-link hover:text-blue">
+                  <Link to="/category=3" className="nav-link hover:text-blue">
                     Quần Jean
                   </Link>
                 </div>
                 <div className="py-2 border-b shadow border-gray">
-                  <Link to="/" className="nav-link hover:text-blue">
+                  <Link to="/category=4" className="nav-link hover:text-blue">
                     Quần Jogger
                   </Link>
                 </div>
@@ -139,7 +138,7 @@ const Header = ({ auth }) => {
       <div className="header-mobile">
         <GrMenu size="2rem" />
       </div>
-      {/* <Banner /> */}
+      {location.pathname === '/' ? <Banner /> : ''}
     </header>
   );
 };

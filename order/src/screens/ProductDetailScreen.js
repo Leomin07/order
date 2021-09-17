@@ -12,7 +12,9 @@ const ProductDetailScreen = ({ match }) => {
   const id = match.params.id;
   const { product, loading, error } = detail;
   useEffect(() => {
-    dispatch(productDetail(id));
+    setTimeout(() => {
+      dispatch(productDetail(id));
+    }, 2000);
   }, [dispatch, id]);
   return (
     <div className="">
@@ -31,7 +33,7 @@ const ProductDetailScreen = ({ match }) => {
         ) : error ? (
           <MessageBox error={error} />
         ) : (
-          <ProductsByCategory categoryId={product.categoryId} />
+          <ProductsByCategory categoryId={product.categoryId} productId={id} />
         )}
       </div>
     </div>

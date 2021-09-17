@@ -17,11 +17,12 @@ header {
 .header-logo {
   padding: 0 30px;
 }
-.sticky {
+/* .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-}
+  text-align: center;
+} */
 .nav {
   display: flex;
   align-items: center;

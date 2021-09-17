@@ -2,6 +2,9 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_FAILED,
+  FETCH_NEW_PRODUCTS_REQUEST,
+  FETCH_NEW_PRODUCTS_SUCCESS,
+  FETCH_NEW_PRODUCTS_FAILED,
   FETCH_PRODUCT_DETAIL_REQUEST,
   FETCH_PRODUCT_DETAIL_SUCCESS,
   FETCH_PRODUCT_DETAIL_FAILED,
@@ -23,12 +26,15 @@ import {
 } from '../types/productType.js';
 import axios from 'axios';
 
-export const productLists = title => async dispatch => {
+export const productLists = () => async dispatch => {
   dispatch({
     type: FETCH_PRODUCTS_REQUEST,
   });
   try {
-    const { data } = await axios.get(`http://localhost:9000/products`);
+    const { data } = await axios.get(
+      `http://localhost:9000/products?_page=1&_limit=8`
+      // `http://localhost:9000/products`
+    );
     dispatch({
       type: FETCH_PRODUCTS_SUCCESS,
       payload: data,
@@ -36,6 +42,25 @@ export const productLists = title => async dispatch => {
   } catch (err) {
     dispatch({
       type: FETCH_PRODUCTS_FAILED,
+      payload: err.message,
+    });
+  }
+};
+export const productNew = page => async dispatch => {
+  dispatch({
+    type: FETCH_NEW_PRODUCTS_REQUEST,
+  });
+  try {
+    const { data } = await axios.get(
+      `http://localhost:9000/products?_page=${page}&_limit=8`
+    );
+    dispatch({
+      type: FETCH_NEW_PRODUCTS_SUCCESS,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: FETCH_NEW_PRODUCTS_FAILED,
       payload: err.message,
     });
   }

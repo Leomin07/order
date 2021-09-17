@@ -15,12 +15,19 @@ module.exports = {
       blue: {
         DEFAULT: '#007ff5',
         100: '#0415b0',
+        200: '#2c3e50',
       },
       black: '#000',
       lightblue: 'lightblue',
     },
     boxShadow: {
       DEFAULT: '0 3px 10px rgba(0,0,0,0.3)',
+    },
+    zIndex: {
+      999: '9999',
+    },
+    margin: {
+      '2/5': '40%',
     },
   },
   variants: {
