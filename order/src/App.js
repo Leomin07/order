@@ -26,7 +26,6 @@ const App = () => {
       <Router>
         <Header auth={token} />
         <BackToTop />
-
         <Switch>
           <Route path="/" component={HomeScreen} exact />
           <Route path="/product/:id" component={ProductDetailScreen} exact />

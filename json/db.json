@@ -310,5 +310,34 @@
       "categoryId": 4
     }
   ],
-  "order": []
+  "order": [
+    {
+      "userId": 1,
+      "fullName": "Trần Đại Minh",
+      "phone": "0975426401",
+      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
+      "createAt": "15:48:25, 17/9/2021",
+      "orderItems": [
+        {
+          "id": 4,
+          "name": "ÁO PHÔNG NAM Y2K TEE L PLAYLIST",
+          "price": 499000,
+          "image": "https://cdn.boo.vn/products/4527/ao-phong-y2k-tee-l-playlist-3gvpv-1.jpg",
+          "qty": 1,
+          "size": "L",
+          "complete": true
+        },
+        {
+          "id": 3,
+          "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR",
+          "price": 345000,
+          "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
+          "qty": 1,
+          "size": "XL",
+          "complete": true
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
