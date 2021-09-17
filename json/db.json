@@ -8,15 +8,6 @@
       "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
       "isAdmin": false,
       "id": 1
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$TYkEo/QIWlNsax40SuubYeZOxaz14a5dtsM7rL.COs6hMPpzA0dK.",
-      "fullName": "Admin",
-      "phone": "0975426401",
-      "address": "Hà Nội",
-      "isAdmin": true,
-      "id": 2
     }
   ],
   "category": [
@@ -40,7 +31,7 @@
   "products": [
     {
       "id": 1,
-      "name": "ÁO PHÔNG OVERSIZED BOOLAAB",
+      "name": "ÁO PHÔNG NAM OVERSIZED BOOLAAB",
       "image": "https://cdn.boo.vn/products/4595/ao-phong-oversized-boolaab-4cwcd-2.jpg",
       "price": "499000",
       "size": "S",
@@ -50,7 +41,7 @@
     },
     {
       "id": 2,
-      "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
+      "name": "ÁO PHÔNG NAM Y2K OVERSIZED IN TRÀN",
       "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
       "price": 599000,
       "size": "S",
@@ -70,7 +61,7 @@
     },
     {
       "id": 4,
-      "name": "ÁO PHÔNG Y2K TEE L PLAYLIST",
+      "name": "ÁO PHÔNG NAM Y2K TEE L PLAYLIST",
       "image": "https://cdn.boo.vn/products/4527/ao-phong-y2k-tee-l-playlist-3gvpv-1.jpg",
       "price": 499000,
       "size": "L",
@@ -110,7 +101,7 @@
     },
     {
       "id": 8,
-      "name": "ÁO PHÔNG TIE DYED BOOLAAB 2",
+      "name": "ÁO PHÔNG NAM TIE DYED BOOLAAB 2",
       "image": "https://cdn.boo.vn/products/4617/ao-phong-tie-dyed-boolaab-2-extod-1.jpg",
       "price": 599000,
       "size": "M",
@@ -280,7 +271,7 @@
     },
     {
       "id": 25,
-      "name": "DRAWCORD JOGGER PANTS",
+      "name": "QUẦN JOGGER NAM DRAWCORD PANTS V2",
       "image": "https://cdn.boo.vn/products/534/experimental-01-drawcord-jogger-pants-solidbe-beigebe-1.jpg",
       "price": 999000,
       "size": "30",
@@ -290,7 +281,7 @@
     },
     {
       "id": 26,
-      "name": "DRAWCORD JOGGER PANTS",
+      "name": "QUẦN JOGGER NAM DRAWCORD PANTS",
       "image": "https://cdn.boo.vn/products/507/infinitee-02-baasic-sweatpants-solidden-blackden-1.jpg",
       "price": 699000,
       "size": "31",
@@ -325,8 +316,17 @@
       "fullName": "Trần Đại Minh",
       "phone": "0975426401",
       "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
-      "createAt": "9/13/2021, 7:13:27 PM",
+      "createAt": "15:48:25, 17/9/2021",
       "orderItems": [
+        {
+          "id": 4,
+          "name": "ÁO PHÔNG NAM Y2K TEE L PLAYLIST",
+          "price": 499000,
+          "image": "https://cdn.boo.vn/products/4527/ao-phong-y2k-tee-l-playlist-3gvpv-1.jpg",
+          "qty": 1,
+          "size": "L",
+          "complete": true
+        },
         {
           "id": 3,
           "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR",
@@ -334,47 +334,10 @@
           "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
           "qty": 1,
           "size": "XL",
-          "complete": true
-        },
-        {
-          "id": 2,
-          "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
-          "price": 599000,
-          "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
-          "qty": 1,
-          "size": "S",
           "complete": true
         }
       ],
       "id": 1
-    },
-    {
-      "userId": 1,
-      "fullName": "Trần Đại Minh",
-      "phone": "0975426401",
-      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
-      "createAt": "9/13/2021, 10:21:26 PM",
-      "orderItems": [
-        {
-          "id": 3,
-          "name": "ÁO PHÔNG NAM BOOSTICKERS REGULAR",
-          "price": 345000,
-          "image": "https://cdn.boo.vn/products/4515/ao-phong-nam-boostickers-regular-non-nerd-solidtrangwhitetrang-1.jpg",
-          "qty": 1,
-          "size": "XL",
-          "complete": true
-        },
-        {
-          "id": 2,
-          "name": "ÁO PHÔNG Y2K OVERSIZED IN TRÀN",
-          "price": 599000,
-          "image": "https://cdn.boo.vn/products/4510/ao-phong-y2k-oversized-in-tran-4a1vl-0.jpg",
-          "qty": 1,
-          "size": "S",
-          "complete": true
-        }
-      ],
-      "id": 2
     }
   ]
 }

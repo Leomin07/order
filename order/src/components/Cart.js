@@ -8,6 +8,7 @@ import {
   completeAllCart,
   completeCart,
   decreaseQty,
+  emptyCartAction,
   increaseQty,
   removeFromCart,
 } from '../actions/cartAction.js';
@@ -34,17 +35,21 @@ const Cart = ({ carts, cartComplete }) => {
   const completeAllCartHandler = () => {
     dispatch(completeAllCart());
   };
+  const emptyCart = () => {
+    dispatch(emptyCartAction());
+  };
 
   return (
     <div>
-      <table className="table-auto text-center w-full mt-3 bg-white shadow rounded">
+      <table className="align-center text-center w-full mt-3 bg-white shadow rounded">
         <thead>
           <tr>
-            <th className="px-4">
+            <th className="px-4 text-center">
               <input
                 type="checkbox"
                 checked={carts.every(cart => cart.complete)}
                 onChange={() => completeAllCartHandler()}
+                className="mx-auto"
               />
             </th>
             <th>Ảnh sản phẩm</th>
@@ -65,11 +70,11 @@ const Cart = ({ carts, cartComplete }) => {
                   onChange={() => completeCartHandler(cart.id)}
                 />
               </td>
-              <td>
+              <td className="cart-img">
                 <img
                   src={cart.image}
                   alt={cart.name}
-                  className="max-w-full h-48 m-auto"
+                  className="max-w-full h-48"
                 />
               </td>
               <td className="cart-name">{cart.name}</td>
@@ -106,7 +111,7 @@ const Cart = ({ carts, cartComplete }) => {
                 <AiOutlineDelete
                   size="2rem"
                   onClick={() => removeFromCartHandler(cart.id)}
-                  className="mx-auto"
+                  className="my-auto mx-auto"
                 />
               </td>
             </tr>
@@ -115,8 +120,24 @@ const Cart = ({ carts, cartComplete }) => {
       </table>
       <div className="cart-bottom">
         <div className="select-all-cart ">
-          <input type="checkbox" className="mr-3" />
-          <span>CHỌN TẤT CẢ ({carts.length}) </span>
+          <input
+            type="checkbox"
+            className="mr-3"
+            checked={carts.every(cart => cart.complete)}
+            onChange={() => completeAllCartHandler()}
+          />
+          <span
+            onClick={() => completeAllCartHandler()}
+            className="cursor-pointer px-4"
+          >
+            CHỌN TẤT CẢ ({carts.length}){' '}
+          </span>
+          <span
+            className="cursor-pointer ml-4 text-red"
+            onClick={() => emptyCart()}
+          >
+            XOÁ TẤT CẢ
+          </span>
         </div>
         <h4 className="total-price">
           TỔNG THANH TOÁN ({cartComplete.length} SẢN PHẨM):{' '}
@@ -127,7 +148,7 @@ const Cart = ({ carts, cartComplete }) => {
             prefix={'₫'}
           />
         </h4>
-        <div className="cart-actions ">
+        <div className="cart-actions flex gap-6 ">
           <button className="bg-gray mx-4" onClick={() => history.push('/')}>
             TIẾP TỤC ĐẶT HÀNG
           </button>

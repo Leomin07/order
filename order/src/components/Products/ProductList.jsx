@@ -22,15 +22,15 @@ const ProductList = ({ product }) => {
     history.push('/cart');
   };
   return (
-    <div className="card">
+    <div className="card relative z-0">
       <div className="card-img">
         <Link to={`product/${product.id}`}>
           <img src={`${product.image}`} alt="" className="img-fluid" />
         </Link>
       </div>
-      <div className="card-name text-center">
+      <div className="card-name text-center ">
         <Link to={`product/${product.id}`}>
-          <span>{product.name} </span>
+          <span className="hover:text-blue">{product.name} </span>
         </Link>
       </div>
       <div className="card-price text-center">

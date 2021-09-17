@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { productByCategoryId } from '../../actions/productAction.js';
 import './styles.css';
 
-const ProductsByCategory = ({ categoryId }) => {
+const ProductsByCategory = ({ categoryId, productId }) => {
   const state = useSelector(state => state.productList);
   const { products } = state;
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const ProductsByCategory = ({ categoryId }) => {
             </div>
             <div className="card-name text-center">
               <Link to={`${product.id}`}>
-                <span>{product.name} </span>
+                <span className="hover:text-blue">{product.name} </span>
               </Link>
             </div>
             <div className="card-price text-center">

@@ -2,6 +2,9 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_FAILED,
+  FETCH_NEW_PRODUCTS_REQUEST,
+  FETCH_NEW_PRODUCTS_SUCCESS,
+  FETCH_NEW_PRODUCTS_FAILED,
   FETCH_PRODUCT_DETAIL_REQUEST,
   FETCH_PRODUCT_DETAIL_SUCCESS,
   FETCH_PRODUCT_DETAIL_FAILED,
@@ -50,6 +53,20 @@ export const productListReducer = (
         loading: false,
       };
     case SEARCH_PRODUCT_FAILED:
+      return { loading: false, error: action.payload };
+
+    case FETCH_NEW_PRODUCTS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FETCH_NEW_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        products: [...state.products, ...action.payload],
+        loading: false,
+      };
+    case FETCH_NEW_PRODUCTS_FAILED:
       return { loading: false, error: action.payload };
 
     case PRODUCT_BY_CATEGORY_ID_REQUEST:

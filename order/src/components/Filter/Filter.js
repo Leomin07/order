@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import {
   productActive,
@@ -26,9 +25,12 @@ const Filter = ({ productLists, categories }) => {
   const dispatch = useDispatch();
   const searchProductHandler = e => {
     e.preventDefault();
-    dispatch(searchProduct(keyword));
+    if (keyword === '') {
+      dispatch(productLists());
+    } else {
+      dispatch(searchProduct(keyword));
+    }
   };
-
   const productByCategoryHandler = e => {
     let checked = e.target.checked;
     let id = e.target.value;
@@ -46,7 +48,6 @@ const Filter = ({ productLists, categories }) => {
   const productBySizeHandler = e => {
     let checked = e.target.checked;
     let size = e.target.value;
-    console.log(checked, size);
     if (checked) {
       setTimeout(() => {
         dispatch(productBySize(size));
@@ -91,6 +92,7 @@ const Filter = ({ productLists, categories }) => {
                 type="checkbox"
                 value={value.id}
                 onChange={e => productByCategoryHandler(e)}
+                className="cursor-pointer "
               />
               {value.name}
             </div>

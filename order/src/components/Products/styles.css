@@ -1,5 +1,5 @@
 .card {
-  flex-basis: 25%;
+  flex: 0 0 25%;
   margin: 10px 0;
   display: flex;
   flex-direction: column;
@@ -17,14 +17,18 @@
   color: black;
   padding: 0 8px;
 }
-.card-name span:hover {
+/* .card-name span:hover {
   color: #007ff5;
-}
+} */
 .card-price {
   margin-top: auto;
   color: red;
 }
 .card-actions {
-  margin-top: 10px;
-  background: none;
+  position: absolute;
+  top: 55%;
+  display: none;
+}
+.card:hover .card-actions {
+  display: block;
 }

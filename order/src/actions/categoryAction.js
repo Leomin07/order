@@ -1,15 +1,9 @@
-import {
-  FETCH_CATEGORY_SUCCESS,
-  FETCH_CATEGORY_REQUEST,
-  FETCH_CATEGORY_FAILED,
-  //   FETCH_CATEGORY_DETAIL_REQUEST,
-  //   FETCH_CATEGORY_DETAIL_SUCCESS,
-  //   FETCH_CATEGORY_DETAIL_FAILED,
-  ADD_CATEGORY,
-  UPDATE_CATEGORY,
-  DELETE_CATEGORY,
-} from '../types/categoryType.js';
 import axios from 'axios';
+import {
+  FETCH_CATEGORY_FAILED,
+  FETCH_CATEGORY_REQUEST,
+  FETCH_CATEGORY_SUCCESS,
+} from '../types/categoryType.js';
 
 export const categoryList = () => async dispatch => {
   dispatch({

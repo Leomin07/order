@@ -1,36 +1,39 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { loadUserAction } from './actions/authAction.js';
-import HeaderAdmin from './components/Admin/HeaderAdmin.js';
+import { BackToTop } from './components/BackToTop.js';
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
 import NoMatch from './components/NoMatch.js';
 import { ProtectedRoute } from './route/ProtectedRoute.js';
-import AdminCategory from './screens/Admin/AdminCategory.js';
-import AdminProduct from './screens/Admin/AdminProduct.js';
 import CartScreen from './screens/CartScreen.js';
 import CheckoutScreen from './screens/CheckoutScreen.js';
 import HomeScreen from './screens/HomeScreen.js';
 import LoginScreen from './screens/LoginScreen.js';
 import OrderHistoryScreen from './screens/OrderHistoryScreen.js';
+import ProductByCategoryScreen from './screens/ProductByCategoryScreen.js';
 import ProductDetailScreen from './screens/ProductDetailScreen.js';
 import RegisterScreen from './screens/RegisterScreen.js';
 
 const App = () => {
   const token = useSelector(state => state.auth.token);
-  const user = useSelector(state => state.auth.user);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadUserAction());
-  }, [dispatch]);
+  window.onbeforeunload = function () {
+    localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
+  };
   return (
-    <div className="container">
+    <div className="root">
       <Router>
-        {user.isAdmin ? <HeaderAdmin /> : <Header auth={token} />}
+        <Header auth={token} />
+        <BackToTop />
         <Switch>
           <Route path="/" component={HomeScreen} exact />
           <Route path="/product/:id" component={ProductDetailScreen} exact />
+          <Route
+            path="/category=:id"
+            component={ProductByCategoryScreen}
+            exact
+          />
           <Route path="/cart" component={CartScreen} />
           <Route path="/login" component={LoginScreen} exact />
           <Route path="/register" component={RegisterScreen} exact />
