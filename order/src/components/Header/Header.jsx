@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineCloseSquare } from 'react-icons/ai';
 import { GrMenu } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { RiAccountPinCircleFill } from 'react-icons/ri';
-// import Banner from '../Banner.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { logoutAction } from '../../actions/authAction.js';
@@ -16,6 +16,7 @@ const Header = ({ auth }) => {
   const dispatch = useDispatch();
   const carts = useSelector(state => state.cart.cartItems);
   const user = useSelector(state => state.auth.user);
+  const [isShow, setIsShow] = useState(false);
   useEffect(() => {
     dispatch(cartList());
     window.addEventListener('scroll', handleScroll);
@@ -40,66 +41,92 @@ const Header = ({ auth }) => {
           Hotline Mua hàng: 0968.959.050 | Hotline CSKH: 0868.303.399
         </p>
       </div>
-      <div className={scrolling ? 'header-main sticky' : 'header-main'}>
-        <div className="header-logo">
+      <div
+        className={
+          scrolling
+            ? 'header-main sticky'
+            : 'header-main flex align-center text-center relative py-4 px-4 gap-6 md:flex md:justify-around md:align-center'
+        }
+      >
+        <div className="w-1/2 sm:w-auto">
           <Link to="/">
             <img
               src={require('../../assets/logo.png').default}
               alt="logo"
-              className="img-fluid"
+              className="img-fluid cursor-pointer"
               width="150px"
             />
           </Link>
         </div>
-        <div className="header-nav">
-          <ul className="nav text-center ">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Trang chủ
-              </Link>
-            </li>
-            <li className="nav-item">
-              <div className="relative ">
-                <Link to="/" className="nav-link hover:text-blue">
-                  Áo nam
+        <div
+          className={
+            isShow
+              ? 'inline bg-black-shadow z-auto w-full h-full fixed -ml-8 top-0 '
+              : 'hidden sm:inline sm:bg-white md:w-auto'
+          }
+        >
+          <div className="w-3/4 h-full fixed top-0 right-0 bg-white-100 text-left px-8 pt-8 transform translate-x-0 leading-10 z-999 sm:relative sm:bg-white sm:z-0 sm:w-full  sm:text-center sm:py-0">
+            {isShow && (
+              <div className="mb-11">
+                <span className="text-xl">MENU</span>
+                <div className="absolute inset-y-0 right-8 top-8">
+                  <AiOutlineCloseSquare
+                    size="2rem"
+                    onClick={() => setIsShow(!isShow)}
+                  />
+                </div>
+              </div>
+            )}
+            <ul className="nav w-full">
+              <li className="nav-item sm:inline-block px-4">
+                <Link to="/" className="nav-link ">
+                  Trang chủ
                 </Link>
-              </div>
-              <div className="absolute z-50 menu bg-white text-left shadow">
-                <div className="py-2 border-b border-gray">
-                  <Link to="/category=1" className="nav-link hover:text-blue">
-                    Áo Phông
+              </li>
+              <li className="nav-item sm:inline-block px-4">
+                <div className="relative ">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Áo nam
                   </Link>
                 </div>
-                <div className="py-2 border-b shadow border-gray">
-                  <Link to="/category=2" className="nav-link hover:text-blue">
-                    Áo Sơ Mi
+                <div className="absolute z-50 menu bg-white text-left shadow">
+                  <div className="py-2 border-b border-gray">
+                    <Link to="/category=1" className="nav-link hover:text-blue">
+                      Áo Phông
+                    </Link>
+                  </div>
+                  <div className="py-2 border-b shadow border-gray">
+                    <Link to="/category=2" className="nav-link hover:text-blue">
+                      Áo Sơ Mi
+                    </Link>
+                  </div>
+                </div>
+              </li>
+              <li className="nav-item sm:inline-block px-4">
+                <div className="relative ">
+                  <Link to="/" className="nav-link hover:text-blue">
+                    Quần nam
                   </Link>
                 </div>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="relative ">
-                <Link to="/" className="nav-link hover:text-blue">
-                  Quần nam
-                </Link>
-              </div>
-              <div className="absolute z-50 menu bg-white text-left shadow">
-                <div className="py-2 border-b border-gray">
-                  <Link to="/category=3" className="nav-link hover:text-blue">
-                    Quần Jean
-                  </Link>
+                <div className="absolute z-50 menu bg-white text-left shadow">
+                  <div className="py-2 border-b border-gray">
+                    <Link to="/category=3" className="nav-link hover:text-blue">
+                      Quần Jean
+                    </Link>
+                  </div>
+                  <div className="py-2 border-b shadow border-gray">
+                    <Link to="/category=4" className="nav-link hover:text-blue">
+                      Quần Jogger
+                    </Link>
+                  </div>
                 </div>
-                <div className="py-2 border-b shadow border-gray">
-                  <Link to="/category=4" className="nav-link hover:text-blue">
-                    Quần Jogger
-                  </Link>
-                </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="header-icons">
-          <div className="cart-icon">
+
+        <div className="w-1/2 justify-end -ml-4 flex md:w-auto">
+          <div className="cart-icon ml-4">
             {carts.length < 1 ? (
               ''
             ) : (
@@ -112,7 +139,7 @@ const Header = ({ auth }) => {
             </Link>
           </div>
           {auth && (
-            <div className="user-info">
+            <div className="user-info ml-4">
               <div className="user-name">{user.fullName} </div>
               <div className="user-actions">
                 <div className="user-action_logout">
@@ -127,17 +154,18 @@ const Header = ({ auth }) => {
             </div>
           )}
           {!auth && (
-            <div className="account-icon">
+            <div className="account-icon ml-4">
               <Link to="/login" className="icon-link">
                 <RiAccountPinCircleFill size="2rem" />
               </Link>
             </div>
           )}
+          <div className="sm:hidden ml-4">
+            <GrMenu size="2rem" onClick={() => setIsShow(!isShow)} />
+          </div>
         </div>
       </div>
-      <div className="header-mobile">
-        <GrMenu size="2rem" />
-      </div>
+
       {location.pathname === '/' ? <Banner /> : ''}
     </header>
   );

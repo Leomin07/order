@@ -17,7 +17,10 @@ module.exports = {
         100: '#0415b0',
         200: '#2c3e50',
       },
-      black: '#000',
+      black: {
+        DEFAULT: '#000',
+        shadow: 'rgba(0,0,0,0.7)',
+      },
       lightblue: 'lightblue',
     },
     boxShadow: {
@@ -26,9 +29,9 @@ module.exports = {
     zIndex: {
       999: '9999',
     },
-    margin: {
-      '2/5': '40%',
-    },
+    // margin: {
+    //   '2/5': '40%',
+    // },
   },
   variants: {
     extend: {},

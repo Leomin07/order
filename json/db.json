@@ -6,8 +6,17 @@
       "fullName": "Trần Đại Minh",
       "phone": "0975426401",
       "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
-      "isAdmin": false,
+      "role": "User",
       "id": 1
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$ZMvVxPf3x5VYgwm9Gv9SPOIHFL3Mq.EYZ2vxjtL.3oiRAkKq5Cp.K",
+      "fullName": "Admin",
+      "phone": "0975426401",
+      "address": "15 Hoàng Quốc Việt, Cầu Giấy, Hà Nội",
+      "role": "Admin",
+      "id": 2
     }
   ],
   "category": [

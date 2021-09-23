@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="p">ĐỊA CHỈ: Cầu giấy, thành phố Hà Nội</div>
           <div className="p">SĐT LIÊN HỆ: 0868.303.399</div>
-          <div className="p">EMAIL: minhtd@vmodev.com</div>
+          <div className="p">EMAIL: minhtd@gmail.com</div>
         </div>
       </div>
       <div className="footer-customer">
