@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { BackToTop } from './components/BackToTop.js';
@@ -17,14 +17,24 @@ import RegisterScreen from './screens/RegisterScreen.js';
 
 const App = () => {
   const token = useSelector(state => state.auth.token);
+  const user = useSelector(state => state.auth.user);
+  const [showAdmin, setShowAdmin] = useState(false);
   window.onbeforeunload = function () {
     localStorage.removeItem('token');
     localStorage.removeItem('isAdmin');
   };
+  useEffect(() => {
+    if (user) {
+      setShowAdmin(user.role === 'Admin');
+    } else {
+      setShowAdmin(false);
+    }
+  }, [user]);
   return (
     <div className="root">
       <Router>
-        <Header auth={token} />
+        {showAdmin && <span>admin</span>}
+        {!showAdmin && <Header auth={token} />}
         <BackToTop />
         <Switch>
           <Route path="/" component={HomeScreen} exact />

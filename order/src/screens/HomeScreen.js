@@ -50,16 +50,18 @@ const HomePage = () => {
             ))
           )}
         </div>
-        {products ? (
-          <span
-            className="text-blue-100 cursor-pointer ml-2/5"
-            onClick={() => pagination()}
-          >
-            LOAD MORE
-          </span>
-        ) : (
-          ''
-        )}
+        <div>
+          {products ? (
+            <span
+              className="text-blue-100 cursor-pointer mx-auto"
+              onClick={() => pagination()}
+            >
+              LOAD MORE
+            </span>
+          ) : (
+            ''
+          )}
+        </div>
       </main>
     </div>
   );
